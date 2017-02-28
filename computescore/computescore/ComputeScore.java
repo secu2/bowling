@@ -1,4 +1,4 @@
-package bowling;
+package computescore;
 
 public class ComputeScore {
 	

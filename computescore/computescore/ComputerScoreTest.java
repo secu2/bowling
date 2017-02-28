@@ -1,4 +1,4 @@
-package bowling;
+package computescore;
 
 
 import static org.junit.Assert.*;
