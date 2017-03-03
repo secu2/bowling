@@ -3,7 +3,14 @@ package genTriangleRectangle;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.contrib.theories.DataPoint;
+import org.junit.contrib.theories.DataPoints;
+import org.junit.contrib.theories.FromDataPoints;
+import org.junit.contrib.theories.Theories;
+import org.junit.contrib.theories.Theory;
+import org.junit.runner.RunWith;
 
+@RunWith(Theories.class)
 public class TriangleRectangleTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void testExceptionArgument() {
@@ -25,4 +32,65 @@ public class TriangleRectangleTest {
 
 		assertEquals(TriangleRectangle.getLongeurCarre(a, b) + TriangleRectangle.getLongeurCarre(a, c), TriangleRectangle.getLongeurCarre(b, c),0.0f);
 	}
+	
+	@DataPoints("a values")
+    public static float[][] floatsA(){
+		return new float[][]{
+			new float[]{
+				8, 2, 6
+			},
+			new float[]{
+				0, 21, 4
+			}
+		};
+    }
+	
+	@DataPoints("b values")
+    public static float[][] floatsB(){
+		return new float[][]{
+			new float[]{
+				1, 5, 10
+			},
+			new float[]{
+				21, 56, 44
+			}
+		};
+    }
+	
+	@DataPoints("q values")
+	public static float[] floatQ(){
+		return new float[]{
+				1, 8, 3
+		};
+	}
+	   
+
+    @Theory
+    public void testTriangle(@FromDataPoints("a values") float[] a, 
+    		@FromDataPoints("b values") float[] b, 
+    		@FromDataPoints("q values") float q) {
+    	
+    	float[] c = TriangleRectangle.GenTriangleRectangle(a, b, q);
+    	
+    	
+    	int x = 0;
+    	int y = 1;
+  
+    	
+    	// (xb-xa)²+(yb-ya)² + (xc-xa)²+(yc-ya)² = (xb-xc)²+(yb-yc)² 
+    	assertTrue(
+	    			c(b[x]-a[x]) + c(b[y]-a[y])
+	    			+ c(c[x]-a[x]) + c(c[y]-a[y])
+	    			== c(b[x]-c[x]) + c(b[y]-c[y])
+    			);
+	}
+    
+    /**
+     * Carré
+     * @param x
+     * @return carré de x
+     */
+    private float c(float x){
+    	return x*x;
+    }
 }
