@@ -33,7 +33,7 @@ public class TriangleRectangleTest {
 		assertEquals(TriangleRectangle.getLongeurCarre(a, b) + TriangleRectangle.getLongeurCarre(a, c), TriangleRectangle.getLongeurCarre(b, c),0.0f);
 	}
 	
-	@Theory
+/*	@Theory
 	public void testFunctionTheory(@FromDataPoints("a values") float[] a, 
     		@FromDataPoints("b values") float[] b, 
     		@FromDataPoints("q values") float q) {
@@ -47,10 +47,13 @@ public class TriangleRectangleTest {
     public static float[][] floatsA(){
 		return new float[][]{
 			new float[]{
-				8, 2, 6
+				8, 2
 			},
 			new float[]{
-				0, 21, 4
+				7, 9
+			},
+			new float[]{
+				0, 6
 			}
 		};
     }
@@ -59,10 +62,13 @@ public class TriangleRectangleTest {
     public static float[][] floatsB(){
 		return new float[][]{
 			new float[]{
-				1, 5, 10
+				8, 2
 			},
 			new float[]{
-				21, 56, 44
+				7, 9
+			},
+			new float[]{
+				0, 6
 			}
 		};
     }
@@ -70,7 +76,7 @@ public class TriangleRectangleTest {
 	@DataPoints("q values")
 	public static float[] floatQ(){
 		return new float[]{
-				1, 8, 3
+			1, 8, 9
 		};
 	}
 	   
@@ -95,12 +101,12 @@ public class TriangleRectangleTest {
     			);
 	}
     
-    /**
+    *//**
      * Carré
      * @param x
      * @return carré de x
-     */
+     *//*
     private float c(float x){
     	return x*x;
-    }
+    }*/
 }
