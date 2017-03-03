@@ -16,12 +16,12 @@ public class ComputerScoreTest {
 	@Test 
 	public void  test() {
 		assertEquals(ComputeScore.computeScore(new int[] {}), 0);
-		/*assertEquals(ComputeScore.computeScore(new int[] {2}), 2);
+		assertEquals(ComputeScore.computeScore(new int[] {2}), 2);
 		assertEquals(ComputeScore.computeScore(new int[] {2,7}), 9);
 		assertEquals(ComputeScore.computeScore(new int[] {3,6,2,5}), 16);
 		assertEquals(ComputeScore.computeScore(new int[] {3,7,2,5}), 19);
 		assertEquals(ComputeScore.computeScore(new int[] {10,2,5}), 24);
-		assertEquals(ComputeScore.computeScore(new int[] {10, 0, 0, 2}), 14);*/
+		assertEquals(ComputeScore.computeScore(new int[] {10, 0, 0, 2}), 14);
 		System.out.print("ComputeScoreTest: test ok \n");	
 	}
 	
